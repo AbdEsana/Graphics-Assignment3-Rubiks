@@ -58,9 +58,10 @@
 				scn->moves.push('A');
 				break;
 			case GLFW_KEY_M:
-				for (int i = 0; i < 100; i++) {
-					scn->moves.push(rotations[rand() % 9]);
-				}
+				scn->moves.push('M');
+				break;
+			case GLFW_KEY_S:
+				scn->moves.push('S');
 				break;
 
 			case GLFW_KEY_ESCAPE:			

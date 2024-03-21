@@ -20,7 +20,7 @@ MovableGLM::MovableGLM()
 	ZeroTrans();
 }
 
-glm::mat4 MovableGLM::MakeTrans(glm::mat4 &prevTransformations) const
+glm::mat4 MovableGLM::MakeTrans(const glm::mat4& prevTransformations) const
 {
 	return prevTransformations * MakeTrans();
 }
@@ -30,19 +30,19 @@ glm::mat4 MovableGLM::MakeTrans() const
 	return   rot * trans * scl;
 }
 
-void MovableGLM::MyTranslate(glm::vec3 delta,int mode)
+void MovableGLM::MyTranslate(glm::vec3 delta, int mode)
 {
-	trans = glm::translate(trans,delta);
+	trans = glm::translate(trans, delta);
 }
 
-void  MovableGLM::MyRotate(float angle,glm::vec3 &vec,int mode)
+void MovableGLM::MyRotate(float angle, const glm::vec3& vec, int mode)
 {
 	rot = glm::rotate(glm::mat4(1), angle, vec) * rot;
 }
-	
+
 void  MovableGLM::MyScale(glm::vec3 scale)
 {
-	scl = glm::scale(scl,scale);
+	scl = glm::scale(scl, scale);
 }
 
 void MovableGLM::ZeroTrans()

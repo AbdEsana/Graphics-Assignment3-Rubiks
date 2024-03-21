@@ -35,10 +35,14 @@ public:
 	void WhenRotate();
 	void WhenTranslate();
 	void Motion();
+	void simulateKeystrokes(const std::string& keys);
+	std::string Game::generateRandomActionSequence();
+	std::string CubeSolver(std::string rep);
 	~Game(void);
 	RubikCube rCube;
 	int* rotatingWall[3][3];
 	glm::vec3 delta;
 	float isAnimating;
 	std::queue<char> moves;
+	std::string cubeRep;
 };
